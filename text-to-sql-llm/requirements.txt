@@ -1,0 +1,13 @@
+# Minimal dependencies for basic functionality
+# No external ML libraries required - pure Python implementation
+
+# For full features with LLM:
+# openai>=1.0.0
+# python-dotenv>=1.0.0
+
+# For vector retrieval (optional):
+# sentence-transformers>=2.7.0
+# scikit-learn>=1.0.0
+
+# For testing:
+pytest>=8.0.0
