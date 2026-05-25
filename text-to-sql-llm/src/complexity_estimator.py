@@ -48,8 +48,11 @@ class ComplexityEstimator:
             if re.search(pattern, question_lower):
                 score += 2
         
-        # 3. 表数量检测
-        num_tables = len(linked_schema.get('tables', []))
+        # 3. 表数量检测（兼容两种格式）
+        if 'tables' in linked_schema:
+            num_tables = len(linked_schema.get('tables', []))
+        else:
+            num_tables = len(linked_schema)  # linked_schema 本身是字典，键为表名
         if num_tables >= 3:
             score += 2
         elif num_tables >= 2:

@@ -1,8 +1,9 @@
 import sys
-sys.path.insert(0, 'src')
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from schema_linker import SchemaLinker
-from retriever import ExampleRetriever
+from src.schema_linker import SchemaLinker
+from src.retriever import ExampleRetriever
 
 def main():
     print("Text-to-SQL Demo - SIMPLE VERSION")
