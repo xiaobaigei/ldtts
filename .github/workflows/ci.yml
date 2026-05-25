@@ -9,6 +9,8 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     
     steps:
     - name: Checkout code
@@ -24,6 +26,9 @@ jobs:
     
     - name: Check Python version
       run: python --version
+    
+    - name: Run simple tests
+      run: python tests/test_simple.py
     
     - name: Run end-to-end tests
       run: python tests/test_e2e.py
