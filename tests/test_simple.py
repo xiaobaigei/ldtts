@@ -27,7 +27,7 @@ def main():
     # Test 2: Test SchemaLinker
     try:
         linker = SchemaLinker()
-        result = linker.schema_linking("What is the salary?", {"employees": ["name", "salary"]})
+        result = linker.get_simplified_schema("What is the salary?", {"employees": ["name", "salary"]})
         assert isinstance(result, dict)
         print("[PASS] SchemaLinker works")
         passed += 1
